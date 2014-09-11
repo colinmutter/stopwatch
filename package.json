@@ -1,0 +1,31 @@
+{
+  "name": "stopwatch",
+  "version": "0.0.1",
+  "description": "A component to manage one or more high-resolution performance timers",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^1.21.4",
+    "sinon": "^1.10.3"
+  },
+  "scripts": {
+    "test": "mocha --globals performance"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/colinmutter/stopwatch.git"
+  },
+  "keywords": [
+    "component",
+    "stopwatch",
+    "timer",
+    "timing"
+  ],
+  "author": "Colin Mutter <colin.mutter@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/colinmutter/stopwatch/issues"
+  },
+  "homepage": "https://github.com/colinmutter/stopwatch"
+}
