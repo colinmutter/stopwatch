@@ -37,31 +37,29 @@ Adds a 'notch' in the timer with an optional note.  Notches allow for events of 
 ####report(name)
 Returns the timing report object for a given timer.
 
-	stopwatch.start('app');
-	
-	// Let some time elapse...
-	stopwatch.notch('app', 'downloaded');
-	stopwatch.notch('app', 'init');
-	
-	stopwatch.stop('app');
-	var report = stopwatch.report('app');
-	
-	/*
-	{ 
-		total: 153,
-  		notches: [ 
-			{ 
-				note: 'downloaded', 
-				time: 53 
-			}, 
-			{ 
-				note: 'init', 
-				time: 100 
-			} 
-		] 
-	}
-	*/
+```javascript
+stopwatch.start('app');
 
+// Let some time elapse...
+stopwatch.notch('app', 'downloaded');
+stopwatch.notch('app', 'init');
+
+stopwatch.stop('app');
+var report = stopwatch.report('app');
+
+/*
+{ 
+  total: 153,
+  notches: [{ 
+    note: 'downloaded', 
+    time: 53 
+  },{ 
+    note: 'init', 
+    time: 100 
+  }] 
+}
+*/
+```
 
 ## TODO
 Add more analysis in the report for timings between notches.
