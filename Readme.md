@@ -3,7 +3,7 @@
 
 See how long it takes to do things ;)
 
-A component to manage one or more high-resolution performance timers.  In the event performance.now is available in the browser, it will be used over Date.  Time calculations are only performed during _report_ so this library would be very low impact from an application performance standpoint.
+A module to manage one or more high-resolution performance timers.  In the event performance.now is available in the browser, it will be used over Date.  Time calculations are only performed during _report_ so this library would be very low impact from an application performance standpoint.
 
 ## Installation
 
@@ -69,7 +69,7 @@ Add more analysis in the report for timings between notches.
 
   The MIT License (MIT)
 
-  Copyright (c) 2014 <copyright holders>
+  Copyright (c) 2014 Colin Mutter
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
