@@ -37,6 +37,8 @@ Adds a 'notch' in the timer with an optional note.  Notches allow for events of 
 ####report(name)
 Returns the timing report object for a given timer.
 
+```javascript
+
 	stopwatch.start('app');
 	
 	// Let some time elapse...
@@ -61,7 +63,7 @@ Returns the timing report object for a given timer.
 		] 
 	}
 	*/
-
+```
 
 ## TODO
 Add more analysis in the report for timings between notches.
