@@ -3,7 +3,7 @@
 
 See how long it takes to do things ;)
 
-A component to manage one or more high-resolution performance timers.  In the event performance.now is available in the browser, it will be used over Date.  Time calculations are only performed during _report_ so this library would be very low impact from an application performance standpoint.
+A module to manage one or more high-resolution performance timers.  In the event performance.now is available in the browser, it will be used over Date.  Time calculations are only performed during _report_ so this library would be very low impact from an application performance standpoint.
 
 ## Installation
 
@@ -38,31 +38,27 @@ Adds a 'notch' in the timer with an optional note.  Notches allow for events of 
 Returns the timing report object for a given timer.
 
 ```javascript
+stopwatch.start('app');
 
-	stopwatch.start('app');
-	
-	// Let some time elapse...
-	stopwatch.notch('app', 'downloaded');
-	stopwatch.notch('app', 'init');
-	
-	stopwatch.stop('app');
-	var report = stopwatch.report('app');
-	
-	/*
-	{ 
-		total: 153,
-  		notches: [ 
-			{ 
-				note: 'downloaded', 
-				time: 53 
-			}, 
-			{ 
-				note: 'init', 
-				time: 100 
-			} 
-		] 
-	}
-	*/
+// Let some time elapse...
+stopwatch.notch('app', 'downloaded');
+stopwatch.notch('app', 'init');
+
+stopwatch.stop('app');
+var report = stopwatch.report('app');
+
+/*
+{ 
+  total: 153,
+  notches: [{ 
+    note: 'downloaded', 
+    time: 53 
+  },{ 
+    note: 'init', 
+    time: 100 
+  }] 
+}
+*/
 ```
 
 ## TODO
@@ -73,7 +69,7 @@ Add more analysis in the report for timings between notches.
 
   The MIT License (MIT)
 
-  Copyright (c) 2014 <copyright holders>
+  Copyright (c) 2014 Colin Mutter
 
   Permission is hereby granted, free of charge, to any person obtaining a copy
   of this software and associated documentation files (the "Software"), to deal
