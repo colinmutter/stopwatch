@@ -1,12 +1,6 @@
 exports = module.exports = Stopwatch;
 
 /**
- * Get the highest resolution time function possible
- * @type {Function}
- */
-var now;
-
-/**
  * Stopwatch
  * @param {String} name
  */
@@ -14,8 +8,6 @@ function Stopwatch(name) {
   this.name = name;
   this.ticks = [];
   this.running = 0;
-  // Resolve date fn on creation to allow for mocking
-  now = timeFn();
 }
 
 /**
@@ -91,14 +83,14 @@ Stopwatch.prototype.report = function () {
 
 /**
  * Notch model
- * @param  {Number} time       current timestamp
+ * @param  {Function} time     best timestamp fn
  * @param  {String} ev         event label
  * @param  {String} annotation optional annotation
  * @return {Object}
  */
-function notch(time, ev, annotation) {
+function notch(timeFn, ev, annotation) {
   var model = {
-    time: time,
+    time: timeFn(),
     event: ev
   };
 
@@ -114,15 +106,18 @@ function notch(time, ev, annotation) {
  * Retrieves a high-resolution time
  * @return {Number}
  */
-function timeFn() {
-  if (typeof performance !== 'undefined' && typeof performance.now ===
-    'function') {
-    return performance.now;
-  }
-  else {
-    return Date.now || function () {
-      return +(new Date)
-    }
+function now() {
+
+  if (typeof performance === 'undefined') {
+    performance = {};
   }
 
+  return performance.now ||
+    performance.mozNow ||
+    performance.msNow ||
+    performance.oNow ||
+    performance.webkitNow ||
+    function () {
+      return new Date().getTime();
+    };
 }
