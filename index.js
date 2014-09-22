@@ -1,4 +1,4 @@
-var Stopwatch = require('./stopwatch');
+var Stopwatch = require('./lib/stopwatch');
 
 /**
  * Expose operations

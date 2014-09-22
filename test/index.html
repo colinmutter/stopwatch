@@ -1,0 +1,18 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>stopwatch TEST</title>
+    <link rel="stylesheet" href="../node_modules/mocha/mocha.css">
+    <script src="/duotest.js"></script>
+    <script src="../node_modules/sinon/pkg/sinon.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script>mocha.setup({"ui":"bdd"})</script>
+    <script src="/build/tests.js"></script>
+    <script>duotest(mocha.run());</script>
+  </body>
+</html>
